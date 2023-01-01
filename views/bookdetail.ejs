@@ -1,0 +1,32 @@
+<%- include('layouts/header') %>
+		
+		<div class="bookdetails">
+			<h2> Book Details</h2>
+		<br>
+		<div id="booklist">
+		<form method="POST" action="/deleteMessage">
+			
+				<section>
+					<a href="/">Home</a> <br>	
+					<p>
+						Title: <%= book.title %> <br>
+						Condition: <%= book.condition %> <br>
+						Price: <%= book.price %> <br>
+						Creator of Entry: <%= book.email %>
+					</p>
+					<% if(isUser===book.created_by) { %>
+						<button name="delete-button"> Delete </button>
+					<% } %>
+					<! adding input type hidden so that we can pull the book_id value without having to display it on the page $_POST can be for ['book_id']>
+					<input type="hidden" name="book_id" value="<%= book.book_id%>">	
+			
+				</section>
+		</form>
+
+			
+			
+		</div>	
+
+	</div>
+	<%- include('layouts/footer') %>
+

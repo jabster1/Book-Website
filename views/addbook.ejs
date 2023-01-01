@@ -1,0 +1,45 @@
+<%- include('layouts/header') %>
+	<div class="text-center">
+		<h2> Add a new book!</h2>
+
+		
+		<form method="POST" action="addbook" class="col-md-6 text-center">
+
+		<div class="row mb-3">
+    			<label for="inputEmail3" class="col-sm-2 col-form-label">Book Title</label>
+    			<div class="col-sm-10">
+     			 	<input type="text" class="form-control" id="inputEmail3" name="title" value="<%= old.title %>">
+    			<span class="error"> <%= errors?.title %> </span>
+			</div>
+  		</div>
+
+		<div class="row mb-3">
+    			<label for="inputEmail3" class="col-sm-2 col-form-label">Condition 1-4</label>
+    			<div class="col-sm-10">
+     			 	<input type="text" class="form-control" id="inputEmail3" name="condition" value="<%= old.condition %>">
+    			<span class="error"> <%= errors?.condition %></span>
+			</div>
+  		</div>
+
+		<div class="row mb-3">
+    			<label for="inputEmail3" class="col-sm-2 col-form-label">Price</label>
+    			<div class="col-sm-10">
+     			 	<input type="text" class="form-control" id="inputEmail3" name="price" value="<%= old.price %>">
+    			<span class="error"><%= errors?.price %></span>
+
+			
+
+				<input type="hidden" name="update_book_id" value="' . $book_id . '">
+			
+			</div>
+  		</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+			
+		</form>
+		<br>
+		<h3>If you are not logged in you will need to login to add a book.<h3>
+			<button type="button" class="btn btn-dark"> <a href="/login">Login</a> </button>
+	</div>	
+		<%- include('layouts/footer') %>
+

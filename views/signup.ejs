@@ -1,0 +1,31 @@
+<%- include('layouts/header') %>
+	<div class="text-center">
+		<h4 class="mt-1 mb-5 pb-1">We are Book Insight</h4>
+	<h4> <a href="/">Home</a> </h4>
+		<h4 class="mt-1 mb-5 pb-1">Sign Up</h4>
+	</div>
+
+	<div style="margin-left:200px">
+	<form method="POST" action="signup">
+	<label for="email">Email</label>
+	<br>
+	<input type="text" name="email" id="email" placeholder="youremail@example.com" value="">
+	<br>
+	<label for="screen-name">Screen Name</label>
+	<br>
+	<input type="text" id="screen-name" name="screen-name" value="">
+	<br>
+	<label for="password">Password</label>
+	<br>
+	<input type="password" name="password" id="password">
+	<br>
+	<label for="confirm-password">Confirm Password</label>
+	<br>
+	<input type="password" name="confirm-password" id="confirm-password">
+	<br>
+	<div class="error"></div>
+	<button>Sign Me Up</button>
+	</form>
+	</div>
+   
+<%- include('layouts/footer') %>

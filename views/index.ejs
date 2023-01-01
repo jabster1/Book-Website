@@ -1,0 +1,43 @@
+<%- include('layouts/header') %>
+	
+	<div class="about">
+		<h2> About
+			<% if(loggedIn) { %>
+				<button type="button" class="btn btn-dark"><a href="/logout">Logout</a></button>
+			<% }else { %>
+				<button type="button" class="btn btn-dark"><a href="/login">Login</a></button>
+				<button type="button" class="btn btn-dark"><a href="/signup">Sign Up</a></button>
+			<% } %>
+		 </h2>
+		<p> Welcome to the <strong>#1 rated site</strong> to find the book of your dreams. Browse through our navigation guide at the top to add a book that has blown you away. On a budget? Our home page lists the cheapest and greatest books available.			</p>
+	<br>
+	
+	<h2> List of Books! </h2>
+	<div id="booklist">
+		<table class ="table table-dark">
+			<thead>
+				<tr>
+				  <th scope="col">Title</th>
+				  <th scope="col">Price</th>
+				  <th scope="col">Condition</th>
+				</tr>
+			  </thead>
+			  <tbody>
+		<% for(let book of books) { %>
+				<tr>
+					<% if(loggedIn) { %>
+						<td class="title"> <a href=bookdetail?book_id=<%=book.book_id%>><%= book.title %></a> </td>
+					<% }else{ %>
+						<td class="title"> <%= book.title %> </td>
+					<% } %>	
+				  <td class="price"> <%= book.price %> </td>
+				  <td class="condition"> <%= book.condition %> </td>
+				</tr>
+		<% } %>
+			  </tbody>
+		</table>
+	</div>	
+
+</div>
+
+<%- include('layouts/footer') %>

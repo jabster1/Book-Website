@@ -1,0 +1,33 @@
+<%- include('layouts/header') %>
+	<div class="text-center">
+		<h4 class="mt-1 mb-5 pb-1">We are Book Insight</h4>
+		<p class="mb-0 me-2">Don't have an account?</p>
+		<a href="signup" class="btn btn-outline-danger" style="background-color:white;">Sign Up</a>
+		<h4 class="mt-1 mb-5 pb-1">Log In</h4>
+	</div>
+
+	<form method="POST" action="login">
+	<div class="text-center">
+		<p>Please login to your account</p>
+		<label for="email">Email</label>
+		<br> <input id="email" name="email" type="text" placeholder="youremail@example.com" value="<%= old.email %>">
+	<br>
+	<% if (typeof errors.email !== 'undefined') { %>
+		<div class="error"> <%= errors.email %> </div>
+	<% } %>
+		<label for="password">Password</label>
+	<br>
+		<input type="password" name="password" id="password" />
+	<br>
+	<% if (typeof errors.password !== 'undefined') { %>
+		<div class="error"> <%= errors.password %> </div>
+	<% } %>
+
+		<button>Log in</button>
+		
+		</div>
+	</div>
+	</form>
+   
+<%- include('layouts/footer') %>
+ 
